@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>User Edit Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{/css/style.css}"/>
+    </head>
+
+    <body>
+
+        <h1>Edit User</h1>
+
+        <form action="update" method="post">
+
+            <input type="hidden" name="id" th:value="${user.id}"/>
+
+            <table>
+                <tr>
+                    <th>First_Name:</th>
+                    <td>
+                        <input type="text" name="firstName"
+                               th:value="${user.firstName}"
+                               />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Last_Name:</th>
+                    <td>
+                        <input type="text" name="lastName"
+                               th:value="${user.lastName}"
+                               />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Specialty:</th>
+                    <td>
+                        <input type="text" name="specialty"
+                               th:value="${user.specialty}"
+                               />
+                    </td>
+                </tr>
+
+
+            </table>
+            <input type="submit" value="Save"/>
+        </form>
+
+    </body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>User List</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{/css/style.css}" />
+    </head>
+
+    <body>
+
+        <h1>User List</h1>
+
+        <div style="margin-bottom: 20px">
+            <a class="add" th:href="@{/user/new}">Add New User</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>FIRST_NAME</th>
+                    <th>LAST_NAME</th>
+                    <th>SPECIALTY</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody th:remove="all-but-first">
+                <tr th:each="user : ${users}" th:class="${userStat.odd}? 'odd'">
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.specialty}"></td>
+
+                    <td><a th:href="@{/user/edit(id=${user.id})}">edit</a></td>
+                    <td><a th:href="@{/user/delete(id=${user.id})}">delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <a href="../home.html" th:href="@{/}">Return to home</a>
+        </p>
+
+    </body>
+
+</html>
+

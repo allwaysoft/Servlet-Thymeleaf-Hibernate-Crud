@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>User New Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{/css/style.css}"/>
+    </head>
+
+    <body>
+
+        <h1>Add New User</h1>
+
+        <form action="insert" method="post">
+
+            <table>
+                <tr>
+                    <th>First_Name:</th>
+                    <td>
+                        <input type="text" name="firstName"
+                               value=""
+                               />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Last_Name:</th>
+                    <td>
+                        <input type="text" name="lastName"
+                               value=""
+                               />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Specialty:</th>
+                    <td>
+                        <input type="text" name="specialty"
+                               value=""
+                               />
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <input type="submit" value="Save"/>
+        </form>
+
+    </body>
+
+</html>
